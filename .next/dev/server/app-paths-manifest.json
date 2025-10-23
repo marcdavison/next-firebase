@@ -1,5 +1,6 @@
 {
   "/api/cookiestore/route": "app/api/cookiestore/route.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/other/page": "app/other/page.js",
   "/random/page": "app/random/page.js"
 }

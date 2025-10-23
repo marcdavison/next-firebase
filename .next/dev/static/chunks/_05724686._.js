@@ -7,52 +7,103 @@ __turbopack_context__.s([
     ()=>ClientComponent
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
 ;
-;
 function ClientComponent() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ClientComponent.useEffect": ()=>{
-            const value = 'my-session-value';
-            fetch('/api/cookiestore', {
-                method: 'POST',
-                body: JSON.stringify({
-                    value
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then({
-                "ClientComponent.useEffect": (res)=>{
-                    if (res.ok) {
-                        console.log('cookie stored .. ');
-                        router.push('/dashboard'); // ✅ This triggers a GET request
-                    } else {
-                        console.error('Failed to store cookie');
-                    }
-                }
-            }["ClientComponent.useEffect"]).catch({
-                "ClientComponent.useEffect": (err)=>{
-                    console.error('Error posting to API:', err);
-                }
-            }["ClientComponent.useEffect"]);
-        }
-    }["ClientComponent.useEffect"], []);
+    function sendCorrect() {
+        const value = 'correct-value';
+        fetch('/api/cookiestore', {
+            method: 'POST',
+            body: JSON.stringify({
+                value
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res)=>{
+            if (res.ok) {
+                console.log('cookie stored .. ');
+                router.push('/dashboard'); // ✅ This triggers a GET request
+            } else {
+                console.error('Failed to store cookie');
+            }
+        }).catch((err)=>{
+            console.error('Error posting to API:', err);
+        });
+    }
+    function sendIncorrect() {
+        const value = 'incorrect-value';
+        fetch('/api/cookiestore', {
+            method: 'POST',
+            body: JSON.stringify({
+                value
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res)=>{
+            if (res.ok) {
+                console.log('cookie stored .. ');
+                router.push('/dashboard'); // ✅ This triggers a GET request
+            } else {
+                console.error('Failed to store cookie');
+            }
+        }).catch((err)=>{
+            console.error('Error posting to API:', err);
+        });
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        children: "Sending session value..."
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: "Click a value to send to the api"
+            }, void 0, false, {
+                fileName: "[project]/app/random/page.tsx",
+                lineNumber: 58,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                    type: "button",
+                    onClick: sendCorrect,
+                    value: "Correct"
+                }, void 0, false, {
+                    fileName: "[project]/app/random/page.tsx",
+                    lineNumber: 59,
+                    columnNumber: 8
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/random/page.tsx",
+                lineNumber: 59,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                    type: "button",
+                    onClick: sendIncorrect,
+                    value: "Incorrect"
+                }, void 0, false, {
+                    fileName: "[project]/app/random/page.tsx",
+                    lineNumber: 60,
+                    columnNumber: 8
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/random/page.tsx",
+                lineNumber: 60,
+                columnNumber: 5
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/app/random/page.tsx",
-        lineNumber: 32,
+        lineNumber: 57,
         columnNumber: 10
     }, this);
 }
-_s(ClientComponent, "vQduR7x+OPXj6PSmJyFnf+hU7bg=", false, function() {
+_s(ClientComponent, "fN7XvhJ+p5oE6+Xlo0NJmXpxjC8=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];

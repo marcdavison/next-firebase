@@ -25,6 +25,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function middleware(request) {
     const sessionValue = request.cookies.get('sessionValue')?.value;
+    if (sessionValue !== 'correct-value') {
+        console.log('🚫 Invalid or missing session cookie. Redirecting to /other');
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].redirect(new URL('/other', request.url));
+    }
     console.log('✅ Middleware engaged');
     console.log('🧠 Session cookie value in middleware:', sessionValue);
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"].next();

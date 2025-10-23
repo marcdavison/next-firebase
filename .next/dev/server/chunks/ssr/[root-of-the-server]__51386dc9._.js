@@ -31,16 +31,14 @@ __turbopack_context__.s([
     ()=>ClientComponent
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
-;
 function ClientComponent() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const value = 'correct-vaue';
+    function sendCorrect() {
+        const value = 'correct-value';
         fetch('/api/cookiestore', {
             method: 'POST',
             body: JSON.stringify({
@@ -59,12 +57,71 @@ function ClientComponent() {
         }).catch((err)=>{
             console.error('Error posting to API:', err);
         });
-    }, []);
+    }
+    function sendIncorrect() {
+        const value = 'incorrect-value';
+        fetch('/api/cookiestore', {
+            method: 'POST',
+            body: JSON.stringify({
+                value
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res)=>{
+            if (res.ok) {
+                console.log('cookie stored .. ');
+                router.push('/dashboard'); // ✅ This triggers a GET request
+            } else {
+                console.error('Failed to store cookie');
+            }
+        }).catch((err)=>{
+            console.error('Error posting to API:', err);
+        });
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        children: "Sending session value..."
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: "Click a value to send to the api"
+            }, void 0, false, {
+                fileName: "[project]/app/random/page.tsx",
+                lineNumber: 58,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                    type: "button",
+                    onClick: sendCorrect,
+                    value: "Correct"
+                }, void 0, false, {
+                    fileName: "[project]/app/random/page.tsx",
+                    lineNumber: 59,
+                    columnNumber: 8
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/random/page.tsx",
+                lineNumber: 59,
+                columnNumber: 5
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                    type: "button",
+                    onClick: sendIncorrect,
+                    value: "Incorrect"
+                }, void 0, false, {
+                    fileName: "[project]/app/random/page.tsx",
+                    lineNumber: 60,
+                    columnNumber: 8
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/random/page.tsx",
+                lineNumber: 60,
+                columnNumber: 5
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/app/random/page.tsx",
-        lineNumber: 32,
+        lineNumber: 57,
         columnNumber: 10
     }, this);
 }
@@ -92,11 +149,6 @@ else {
 "use strict";
 
 module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].ReactJsxDevRuntime; //# sourceMappingURL=react-jsx-dev-runtime.js.map
-}),
-"[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
-"use strict";
-
-module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].React; //# sourceMappingURL=react.js.map
 }),
 "[project]/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
@@ -132,6 +184,11 @@ function _interop_require_wildcard(obj, nodeInterop) {
     return newObj;
 }
 exports._ = _interop_require_wildcard;
+}),
+"[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-ssr] (ecmascript)").vendored['react-ssr'].React; //# sourceMappingURL=react.js.map
 }),
 "[project]/node_modules/next/dist/server/route-modules/app-page/vendored/contexts/app-router-context.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
@@ -2309,4 +2366,4 @@ module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/clien
 }),
 ];
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__349fcc4d._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__51386dc9._.js.map
