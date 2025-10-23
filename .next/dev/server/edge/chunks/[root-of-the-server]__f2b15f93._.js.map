@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.ts"],"sourcesContent":["import { NextRequest, NextResponse } from 'next/server';\n\nexport function middleware(request: NextRequest) {\n  const sessionValue = request.cookies.get('sessionValue')?.value;\n  console.log('✅ Middleware engaged');\n  console.log('🧠 Session cookie value in middleware:', sessionValue);\n\n  return NextResponse.next();\n}\n\nexport const config = {\n  matcher: ['/dashboard'], // Only intercept requests to /dashboard\n};\n"],"names":[],"mappings":";;;;;;AAAA;AAAA;;AAEO,SAAS,WAAW,OAAoB;IAC7C,MAAM,eAAe,QAAQ,OAAO,CAAC,GAAG,CAAC,iBAAiB;IAC1D,QAAQ,GAAG,CAAC;IACZ,QAAQ,GAAG,CAAC,0CAA0C;IAEtD,OAAO,gMAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;KAAa;AACzB"}}]
+}

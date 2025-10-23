@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/marcdavison/SourceCode/Learning/nextjs-firebase-demo/next-firebase/app/api/cookiestore/route.tsx"],"sourcesContent":["import { NextResponse } from 'next/server';\nimport type { NextRequest } from 'next/server';\nexport async function POST(request: NextRequest) {\n  const { value } = await request.json();\n\n  const response = NextResponse.json({ success: true });\n  response.cookies.set('sessionValue', value, {\n    httpOnly: true,\n    secure: true,\n    path: '/',\n    sameSite: 'lax',\n  });\n\n  return response;\n}\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe,KAAK,OAAoB;IAC7C,MAAM,EAAE,KAAK,EAAE,GAAG,MAAM,QAAQ,IAAI;IAEpC,MAAM,WAAW,gJAAY,CAAC,IAAI,CAAC;QAAE,SAAS;IAAK;IACnD,SAAS,OAAO,CAAC,GAAG,CAAC,gBAAgB,OAAO;QAC1C,UAAU;QACV,QAAQ;QACR,MAAM;QACN,UAAU;IACZ;IAEA,OAAO;AACT","debugId":null}}]
+}

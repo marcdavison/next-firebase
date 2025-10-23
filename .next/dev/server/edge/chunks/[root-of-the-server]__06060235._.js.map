@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/proxy.ts"],"sourcesContent":["export const runtime = 'edge';\n\nimport { NextRequest, NextResponse } from 'next/server';\n\nexport function proxy(request: NextRequest) {\n  const sessionValue = request.cookies.get('sessionValue')?.value;\n\n  console.log('✅ Proxy engaged for /dashboard');\n  console.log('🧠 Session cookie value:', sessionValue);\n\n  const response = NextResponse.next();\n  response.headers.set('x-proxy-engaged', 'true');\n  return response;\n}\n"],"names":[],"mappings":";;;;;;AAEA;AAAA;AAFO,MAAM,UAAU;;AAIhB,SAAS,MAAM,OAAoB;IACxC,MAAM,eAAe,QAAQ,OAAO,CAAC,GAAG,CAAC,iBAAiB;IAE1D,QAAQ,GAAG,CAAC;IACZ,QAAQ,GAAG,CAAC,4BAA4B;IAExC,MAAM,WAAW,gMAAY,CAAC,IAAI;IAClC,SAAS,OAAO,CAAC,GAAG,CAAC,mBAAmB;IACxC,OAAO;AACT"}}]
+}
